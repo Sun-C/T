@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-server  #集群名  一个集群可以包含多个服务器
+server:
+  port: 2001 #8761
+eureka:
+  instance:
+    #主机名eureka 集群中使用hostname 来区分多个服务器name
+    hostname: eureka-01
+  server:
+    #eureka 自我保护模式  默认是开启的  开发期间先关闭 false   生产期间需要开启
+    enable-self-preservation: false
+  client:
+    # eureka集群会互相注册并相互拉取注册表  开发阶段单台服务设置为 false 不互相注册也不互相拉取
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka1:2001/eureka

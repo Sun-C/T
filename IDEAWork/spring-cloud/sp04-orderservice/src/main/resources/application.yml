@@ -1,0 +1,9 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: order-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka
